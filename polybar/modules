@@ -339,3 +339,14 @@ ramp-signal-4 = " "
 ramp-signal-foreground = ${color.primary}
 ramp-signal-background = ${color.secondary1}
 ramp-signal-font = 2
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/system-bluetooth-bluetoothctl]
+type = custom/script
+exec = $HOME/.config/polybar/scripts/system-bluetooth-bluetoothctl.sh
+tail = true
+click-left = $HOME/.config/polybar/scripts/system-bluetooth-bluetoothctl.sh --toggle &
+format-foreground= ${color.primary}
+format-background = ${color.secondary1}
+
