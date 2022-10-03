@@ -58,7 +58,6 @@ enable-ipc = true
 [bar/main]
 
 monitor = eDP1
-monitor-fallback =
 monitor-strict = true
 
 override-redirect = false
@@ -72,8 +71,8 @@ height = 25
 background = ${color.background}
 foreground = ${color.foreground}
 
-radius-top = 0.0
-radius-bottom = 0.0
+;radius-top = 0.0
+;radius-bottom = 0.0
 
 line-size = 2
 line-color = ${color.secondary1}
@@ -93,21 +92,21 @@ font-3 = "Iosevka Nerd Font Mono:size=18;4"
 font-4 = "Iosevka Nerd Font Mono:style=Bold:size=10;3"
 
 # Default
-modules-left = spacing BLD launcher BRD dot GLD cpu YPL memory CPL filesystem CRD dot MLD network MRD dot MLD temp MRD
-modules-center = LD bspwm RD
-modules-right = MLD rpm MRD dot MLD volume CPL backlight CRD dot MLD battery MRD dot LD date YPL time RRD spacing
+modules-left = LLL date LLL time LLL CRD  MLD LLL network LLL MRD 
+modules-center =  dot MLD LLL bspwm LLL MRD dot 
+modules-right = MLD LLL volume LLL backlight LLL MRD CLD LLL battery LLL
 
 spacing = 0
 dim-value = 1.0
 
-tray-position = none
-tray-detached = false
-tray-maxsize = 16
-tray-background = ${color.background}
-tray-offset-x = 0
-tray-offset-y = 0
-tray-padding = 0
-tray-scale = 1.0
+;tray-position = none
+;tray-detached = false
+;tray-maxsize = 16
+;tray-background = ${color.background}
+;tray-offset-x = 0
+;tray-offset-y = 0
+;tray-padding = 0
+;tray-scale = 1.0
 
 enable-ipc = true
 

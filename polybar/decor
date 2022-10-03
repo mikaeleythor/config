@@ -71,31 +71,31 @@ content-foreground = ${color.white}
 
 [module/CLD]
 type = custom/text
-content = "%{T3}%{T-}"
+content = "%{T3}%{T-}"
 content-font = 3
 content-background = ${color.background}
-content-foreground = ${color.secondary2}
+content-foreground = ${color.secondary1}
 
 [module/CRD]
 type = custom/text
-content = "%{T3}%{T-}"
+content = "%{T3}%{T-}"
 content-font = 3
 content-background = ${color.background}
-content-foreground = ${color.secondary2}
+content-foreground = ${color.secondary1}
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
 
 [module/MLD]
 type = custom/text
-content = "%{T3}%{T-}"
+content = "%{T3}%{T-}"
 content-font = 3
 content-background = ${color.background}
 content-foreground = ${color.secondary1}
 
 [module/MRD]
 type = custom/text
-content = "%{T3}%{T-}"
+content = "%{T3}%{T-}"
 content-font = 3
 content-background = ${color.background}
 content-foreground = ${color.secondary1}
@@ -174,3 +174,10 @@ content-background = ${color.secondary1}
 content-foreground = ${color.secondary1}
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/LLL]
+type = custom/text
+content = "%{T3}ﮋ%{T-}"
+content-font = 3
+content-background = ${color.secondary1}
+content-foreground = ${color.secondary1}

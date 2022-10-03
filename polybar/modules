@@ -8,7 +8,7 @@ type = internal/xbacklight
 card = intel_backlight
 
 format = <ramp> <label>
-format-background = ${color.secondary2}
+format-background = ${color.secondary1}
 
 label = %percentage%%
 label-foreground = ${color.primary}
@@ -171,7 +171,7 @@ label-occupied = ""
 label-occupied-padding = 2
 label-empty = ""
 label-empty-padding = 2
-format-background = ${color.secondary2}
+format-background = ${color.secondary1}
 format-foreground = ${color.primary}
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
@@ -193,15 +193,15 @@ type = internal/date
 interval = 1
 format-margin = 0
 
-date = "%A, %b %e"
+date = "%a, %b %e"
 
 format-prefix = 
 format-prefix-foreground = ${color.primary}
-format-prefix-background = ${color.secondary2}
+format-prefix-background = ${color.secondary1}
 
 label = %date%
 label-foreground = ${color.primary}
-label-background = ${color.secondary2}
+label-background = ${color.secondary1}
 label-padding = 1
 
 [module/time]
