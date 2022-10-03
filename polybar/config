@@ -92,9 +92,9 @@ font-3 = "Iosevka Nerd Font Mono:size=18;4"
 font-4 = "Iosevka Nerd Font Mono:style=Bold:size=10;3"
 
 # Default
-modules-left = LLL date LLL time LLL CRD  MLD LLL network LLL MRD 
-modules-center =  dot MLD LLL bspwm LLL MRD dot 
-modules-right = MLD LLL volume LLL backlight LLL MRD CLD LLL battery LLL
+modules-left = LLL bspwm  LLL MRD CLD LLL polywins LLL MRD
+modules-center =  dot MLD LLL date LLL time LLL MRD dot 
+modules-right = MLD LLL network LLL CRD MLD LLL volume LLL backlight LLL LLL battery LLL
 
 spacing = 0
 dim-value = 1.0

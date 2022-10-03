@@ -6,7 +6,7 @@ picom &                                         # Compositor
 pgrep -x sxhkd > /dev/null || sxhkd &           # Keyboard shortcuts
 albert &                                        # Launcher
 nitrogen --force-setter=xinerama --restore &    # Wallpaper
-$HOME/.config/polybar/launch.sh &               # Taskbar
+$HOME/.config/polybar/scripts/launch.sh &               # Taskbar
 if [[ "$( pidof redshift )" = "" ]]; then ( /usr/lib/geoclue-2.0/demos/agent & redshift & ); fi &
 
 bspc monitor eDP1 -d I II III IV V VI &

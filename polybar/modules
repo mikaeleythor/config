@@ -274,6 +274,16 @@ content-padding=1
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
+[module/polywins]
+type = custom/script
+exec = $HOME/.config/polybar/scripts/polywins.sh 2>/dev/null
+format = <label>
+label = %output%
+label-padding = 1
+format-foreground= ${color.primary}
+format-background = ${color.secondary1}
+tail = true
+
 [module/wired-network]
 type = internal/network
 interface = ${system.network_interface}
@@ -284,14 +294,14 @@ interface = ${system.network_interface}
 
 [module/temp]
 type = custom/script
-exec = $HOME/.config/polybar/cpu-temp.sh
+exec = $HOME/.config/polybar/scripts/cpu-temp.sh
 interval = 1
 format-foreground= ${color.primary}
 format-background = ${color.secondary1}
 
 [module/rpm]
 type = custom/script
-exec = $HOME/.config/polybar/cpu-fan.sh
+exec = $HOME/.config/polybar/scripts/cpu-fan.sh
 interval = 1
 format-foreground= ${color.primary}
 format-background = ${color.secondary1}
