@@ -1,0 +1,37 @@
+#!/bin/sh
+
+# Indepentent of DL monitor
+setxkbmap is &                                  # Map keyboard
+picom &                                         # Compositor
+pgrep -x sxhkd > /dev/null || sxhkd &           # Keyboard shortcuts
+albert &                                        # Launcher
+nitrogen --force-setter=xinerama --restore &    # Wallpaper
+$HOME/.config/polybar/launch.sh &               # Taskbar
+if [[ "$( pidof redshift )" = "" ]]; then ( /usr/lib/geoclue-2.0/demos/agent & redshift & ); fi &
+
+bspc monitor eDP1 -d I II III IV V VI &
+
+# Exclusive to DL monitor
+if [[ $( connected-DVI-monitors ) ]]; then
+    bspc rule -a 'VirtualBox Manager' desktop=^10 follow=on state=tiled
+    bspc rule -a 'VirtualBox Machine' desktop=^10 follow=on state=fullscreen
+    bspc rule -a 'VirtualBoxVM' desktop=^10 follow=on state=floating
+
+    # Init delay for partially dependent commands
+    init-DL-monitor && sleep 5
+
+    # Map desktops to DL monitor
+    bspc monitor $( connected-DVI-monitors ) -d VII VIII IX X 
+    nitrogen --force-setter=xinerama --restore &    # Wallpaper
+    $HOME/.config/polybar/launch.sh &               # Taskbar
+fi
+
+# Indepentent of DL monitor
+bspc rule -a albert focus=on
+bspc config border_width            2
+bspc config window_gap              10
+bspc config top_padding             10
+bspc config focused_border_color    "#CFFF9C"
+bspc config split_ratio             0.5
+bspc config gapless_monocle         true
+

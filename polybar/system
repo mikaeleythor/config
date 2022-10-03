@@ -1,0 +1,7 @@
+; Define system variables
+
+[system]
+adapter = AC0
+batter = BAT0
+;graphics_card = hmmm
+network_interface = wlp2s0
