@@ -11,7 +11,7 @@ super + Escape
 	pkill -USR1 -x sxhkd
 
 super + p
-    dm-tool lock
+    dm-tool switch-to-greeter
 
 ##############################
 ###### Monitor controls ######
@@ -108,27 +108,27 @@ super + Return
 #####################
 
 # Increase backlight 
-XF86MonBrightnessUp
-	xbacklight -inc 10
+F6
+	xbacklight -inc 5
 
 # Decrease backlight
-XF86MonBrightnessDown
-	xbacklight -dec 10
+F5
+	xbacklight -dec 5
 
 # Toggle backlight
-XF86ScreenSaver
+F7
 	if [ "$(xbacklight -get)" = "0.000000" ];then xbacklight -set 50; else xbacklight -set 0; fi
 
 # Increase volume
-XF86AudioRaiseVolume
-	pactl set-sink-volume $( pa-active-sink ) +10%
+F12
+	pactl set-sink-volume $( pa-active-sink ) +5%
 
 # Decrease volume
-XF86AudioLowerVolume
-	pactl set-sink-volume $( pa-active-sink ) -10%
+F11
+	pactl set-sink-volume $( pa-active-sink ) -5%
 
 # Toggle volume
-XF86AudioMute
+F10
 	pactl set-sink-mute $( pa-active-sink ) toggle
 
 # Toggle audio
