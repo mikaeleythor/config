@@ -8,6 +8,7 @@ include-file = ~/.config/polybar/colors
 include-file = ~/.config/polybar/modules
 include-file = ~/.config/polybar/decor
 include-file = ~/.config/polybar/system
+include-file = ~/.config/polybar/mocha.ini
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
@@ -23,7 +24,7 @@ width = 100%
 height = 25
 
 background = ${color.background}
-foreground = ${color.foreground}
+foreground = ${colors.foreground}
 
 line-size = 2
 line-color = ${color.secondary1}

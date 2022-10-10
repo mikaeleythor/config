@@ -3,11 +3,11 @@
 
 # SETTINGS {{{ ---
 
-active_text_color="#CFFF9C"
+active_text_color="#b4befe"
 active_bg=
 active_underline=""
 
-inactive_text_color="#24283b"
+inactive_text_color="#585b70"
 inactive_bg=
 inactive_underline=
 
