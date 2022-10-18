@@ -35,8 +35,8 @@ font-2 = "Iosevka Nerd Font Mono:size=16;4"
 font-3 = "Iosevka Nerd Font Mono:size=18;4"
 font-4 = "Iosevka Nerd Font Mono:style=Bold:size=10;3"
 
-modules-left =
-modules-center = LD bspwm RD
+modules-left = LLL bspwm  LLL MRD 
+modules-center = 
 modules-right =
 
 border-size = 5
