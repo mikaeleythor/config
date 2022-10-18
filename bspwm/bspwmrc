@@ -8,29 +8,32 @@ albert &                                        # Launcher
 nitrogen --force-setter=xinerama --restore &    # Wallpaper
 $HOME/.config/polybar/scripts/launch.sh &       # Taskbar
 if [[ "$( pidof redshift )" = "" ]]; then ( /usr/lib/geoclue-2.0/demos/agent & redshift & ); fi &
-  (sleep 1; plank) &
+plank &
+plank-raiser &
 
 bspc monitor eDP1 -d I II III IV V VI &
 
 # Exclusive to DL monitor
 if [[ $( connected-DVI-monitors ) ]]; then
-    bspc rule -a 'VirtualBox Manager' desktop=^10 follow=on state=tiled
-    bspc rule -a 'VirtualBox Machine' desktop=^10 follow=on state=fullscreen
-    bspc rule -a 'VirtualBoxVM' desktop=^10 follow=on state=floating
 
     # Init delay for partially dependent commands
-    init-DL-monitor && sleep 5
+    init-DL-monitor --portrait && sleep 5
 
     # Map desktops to DL monitor
     bspc monitor $( connected-DVI-monitors ) -d VII VIII IX X 
+
     nitrogen --force-setter=xinerama --restore &    # Wallpaper
     $HOME/.config/polybar/launch.sh &               # Taskbar
-fi
+
+    bspc rule -a 'VirtualBox Manager' desktop=^10 follow=on state=tiled
+    bspc rule -a 'VirtualBox Machine' desktop=^10 follow=on state=fullscreen
+    bspc rule -a 'VirtualBoxVM' desktop=^10 follow=on state=floating
+fi &
 
 # Indepentent of DL monitor
-bspc rule -a albert focus=on
-bspc rule -a Spotify desktop=VI
-bspc rule -a Plank layer=above
+bspc rule -a albert focus=on border=off
+bspc rule -a Spotify desktop=^6
+#bspc rule -a Plank layer=above manage=on focus=off border=off
 bspc config border_width            2
 bspc config window_gap              10
 bspc config top_padding             10
