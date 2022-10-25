@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Indepentent of DL monitor
 setxkbmap is &                                  # Map keyboard
@@ -7,14 +7,16 @@ pgrep -x sxhkd > /dev/null || sxhkd &           # Keyboard shortcuts
 albert &                                        # Launcher
 nitrogen --force-setter=xinerama --restore &    # Wallpaper
 $HOME/.config/polybar/scripts/launch.sh &       # Taskbar
-if [[ "$( pidof redshift )" = "" ]]; then ( /usr/lib/geoclue-2.0/demos/agent & redshift & ); fi &
+if [[ -n "$( pidof redshift )" ]]; then 
+  ( /usr/lib/geoclue-2.0/demos/agent & redshift & ); 
+fi &
 plank &
 plank-raiser &
 
-bspc monitor eDP1 -d I II III IV V VI &
+bspc monitor eDP-1 -d I II III IV V VI &
 
 # Exclusive to DL monitor
-if [[ $( connected-DVI-monitors ) ]]; then
+if [[ -n "$( connected-DVI-monitors )" ]]; then
 
     # Init delay for partially dependent commands
     init-DL-monitor --portrait && sleep 5
@@ -33,7 +35,6 @@ fi &
 # Indepentent of DL monitor
 bspc rule -a albert focus=on border=off
 bspc rule -a Spotify desktop=^6
-#bspc rule -a Plank layer=above manage=on focus=off border=off
 bspc config border_width            2
 bspc config window_gap              10
 bspc config top_padding             10
