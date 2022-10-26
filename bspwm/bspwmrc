@@ -15,22 +15,26 @@ plank-raiser &
 
 bspc monitor eDP-1 -d I II III IV V VI &
 
-# Exclusive to DL monitor
-if [[ -n "$( connected-DVI-monitors )" ]]; then
+xrandr-set-provider-output-source && (
 
-    # Init delay for partially dependent commands
-    init-DL-monitor --portrait && sleep 5
+  # Exclusive to DL monitor
+  if [[ -n "$( connected-DVI-monitors )" ]]; then
+  
+      # Init delay for partially dependent commands
+      init-DL-monitor --portrait && sleep 5
+  
+      # Map desktops to DL monitor
+      bspc monitor $( connected-DVI-monitors ) -d VII VIII IX X 
+  
+      nitrogen --force-setter=xinerama --restore &    # Wallpaper
+      $HOME/.config/polybar/launch.sh &               # Taskbar
+  
+      bspc rule -a 'VirtualBox Manager' desktop=^10 follow=on state=tiled
+      bspc rule -a 'VirtualBox Machine' desktop=^10 follow=on state=fullscreen
+      bspc rule -a 'VirtualBoxVM' desktop=^10 follow=on state=floating
+  fi &
 
-    # Map desktops to DL monitor
-    bspc monitor $( connected-DVI-monitors ) -d VII VIII IX X 
-
-    nitrogen --force-setter=xinerama --restore &    # Wallpaper
-    $HOME/.config/polybar/launch.sh &               # Taskbar
-
-    bspc rule -a 'VirtualBox Manager' desktop=^10 follow=on state=tiled
-    bspc rule -a 'VirtualBox Machine' desktop=^10 follow=on state=fullscreen
-    bspc rule -a 'VirtualBoxVM' desktop=^10 follow=on state=floating
-fi &
+) &
 
 # Indepentent of DL monitor
 bspc rule -a albert focus=on border=off
