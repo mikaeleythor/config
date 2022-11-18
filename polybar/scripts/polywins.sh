@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # POLYWINS
 
 # SETTINGS {{{ ---
@@ -9,16 +9,13 @@ active_underline=""
 
 inactive_text_color="#585b70"
 inactive_bg=
-inactive_underline=
-
-separator=" · "
-show="window_class" # options: window_title, window_class, window_classname
-forbidden_classes="Polybar Conky Gmrun"
+inactive_underline= separator=" · " show="window_class" # options: window_title, window_class, window_classname
+forbidden_classes="Polybar Conky Gmrun albert plank"
 empty_desktop_message=""
 
 char_limit=10
 max_windows=15
-char_case="normal" # normal, upper, lower
+char_case="lower" # normal, upper, lower
 add_spaces="false"
 resize_increment=16
 wm_border_width=1 # setting this might be required for accurate resize position
@@ -179,14 +176,15 @@ generate_window_list() {
 		case "$char_case" in
 			"lower") w_name=$(
 				echo "$w_name" | tr '[:upper:]' '[:lower:]'
-				) ;;
+                                ) 
+                                ;;
 			"upper") w_name=$(
 				echo "$w_name" | tr '[:lower:]' '[:upper:]'
 				) ;;
 		esac
 
 		# Truncate displayed name to user-selected limit
-		if [ "${#w_name}" -gt "$char_limit" ]; then
+	        if [ "${#w_name}" -gt "$char_limit" ]; then
 			w_name="$(echo "$w_name" | cut -c1-$((char_limit-1)))…"
 		fi
 
@@ -197,7 +195,7 @@ generate_window_list() {
 
 		# Add left and right formatting to displayed name
 		if [ "$wid" = "$active_wid" ]; then
-			w_name="${active_left}${w_name}${active_right}"
+                  w_name="${active_left}${w_name}${active_right}"
 		else
 			w_name="${inactive_left}${w_name}${inactive_right}"
 		fi
@@ -214,6 +212,7 @@ generate_window_list() {
 		printf "%s" "%{A4:$on_click increment_size $wid:}"
 		printf "%s" "%{A5:$on_click decrement_size $wid:}"
 		# Print the final window name
+
 		printf "%s" "$w_name"
 		printf "%s" "%{A}%{A}%{A}%{A}%{A}"
 
