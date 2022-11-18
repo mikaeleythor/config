@@ -10,8 +10,8 @@ super + alt + {q,r}
 super + Escape
 	pkill -USR1 -x sxhkd
 
-super + p
-    dm-tool switch-to-greeter
+super + b
+    betterlockscreen -l
 
 ##############################
 ###### Monitor controls ######
@@ -109,15 +109,15 @@ super + Return
 
 # Increase backlight 
 F6
-	xbacklight -inc 5
+	light -A 5
 
 # Decrease backlight
 F5
-	xbacklight -dec 5
+	light -U 5
 
 # Toggle backlight
 F7
-	if [ "$(xbacklight -get)" = "0.000000" ];then xbacklight -set 50; else xbacklight -set 0; fi
+	toggle-backlight
 
 # Increase volume
 F12
@@ -145,9 +145,10 @@ XF86AudioPrev
 XF86AudioNext
     playerctl next
 # Screenshot
-Print
-    scrot 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/screenshots && mv $f ~/screenshots && xclip -selection clipboard -t image/png -i ~/screenshots/`ls -1 -t ~/screenshots | head -1`'
+# Print
+#    scrot 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/screenshots && mv $f ~/screenshots && xclip -selection clipboard -t image/png -i ~/screenshots/`ls -1 -t ~/screenshots | head -1`'
 
 # Screensnip
-shift + Print
-    scrot -s -f  'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/screenshots && mv $f ~/screenshots && xclip -selection clipboard -t image/png -i ~/screenshots/`ls -1 -t ~/screenshots | head -1`'
+Print
+    flameshot gui
+    #scrot -s -f  'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/screenshots && mv $f ~/screenshots && xclip -selection clipboard -t image/png -i ~/screenshots/`ls -1 -t ~/screenshots | head -1`'
