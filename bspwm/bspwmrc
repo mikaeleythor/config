@@ -2,20 +2,21 @@
 
 # Indepentent of DL monitor
 setxkbmap is &                                  # Map keyboard
-picom &                                         # Compositor
-pgrep -x sxhkd > /dev/null || sxhkd &           # Keyboard shortcuts
+xsettingsd &                                    # Theme manager
+xsetroot -cursor_name left_ptr &                # Prevent cursor from being an X
 albert &                                        # Launcher
+picom &                                         # Compositor
+pgrep -x sxhkd > /dev/null || sxhkd -c $HOME/.config/sxhkd/sxhkdrc &           # Keyboard shortcuts
 nitrogen --force-setter=xinerama --restore &    # Wallpaper
 $HOME/.config/polybar/scripts/launch.sh &       # Taskbar
-if [[ -n "$( pidof redshift )" ]]; then 
-  ( /usr/lib/geoclue-2.0/demos/agent & redshift & ); 
+if [[ -z "$( pidof redshift )" ]]; then 
+  redshift -l 64:-21 &
 fi &
 plank &
 plank-raiser &
+bspc monitor $( connected-primary-monitor ) -d I II III IV V VI &
 
-bspc monitor eDP-1 -d I II III IV V VI &
-
-xrandr-set-provider-output-source && (
+( xrandr-set-provider-output-source && (
 
   # Exclusive to DL monitor
   if [[ -n "$( connected-DVI-monitors )" ]]; then
@@ -34,11 +35,12 @@ xrandr-set-provider-output-source && (
       bspc rule -a 'VirtualBoxVM' desktop=^10 follow=on state=floating
   fi &
 
-) &
+  ) & ) &
 
 # Indepentent of DL monitor
 bspc rule -a albert focus=on border=off
 bspc rule -a Spotify desktop=^6
+bspc rule -a "endeavour" state=floating rectangle=1200x800+360+140
 bspc config border_width            2
 bspc config window_gap              10
 bspc config top_padding             10
