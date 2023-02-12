@@ -1,183 +1,183 @@
-[module/spacing]
-type = custom/text
-content = " "
-content-background = ${color.background}
-
-[module/sep]
-type = custom/text
-content = -
-
-content-background = ${color.background}
-content-foreground = ${color.background}
-
-[module/dot]
-type = custom/text
-;content = 
-content = " "
-
-content-font = 3
-content-background = ${color.background}
-content-foreground = ${color.secondary2}
-content-padding = 1
-
-;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
-
-[module/LD]
-type = custom/text
-content = "%{T3}%{T-}"
-content-background = ${color.background}
-content-foreground = ${color.secondary2}
-
-[module/RD]
-type = custom/text
-content = "%{T3}%{T-}"
-content-background = ${color.background}
-content-foreground = ${color.secondary2}
-
-;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
-
-[module/RLD]
-type = custom/text
-content = "%{T3}%{T-}"
-content-font = 3
-content-background = ${color.background}
-content-foreground = ${colors.mantle}
-
-[module/RRD]
-type = custom/text
-content = "%{T3}%{T-}"
-content-font = 3
-content-background = ${color.background}
-content-foreground = ${colors.mantle}
-
-;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
-
-[module/WLD]
-type = custom/text
-content = "%{T3}%{T-}"
-content-font = 3
-content-background = ${color.background}
-content-foreground = ${color.white}
-
-[module/WRD]
-type = custom/text
-content = "%{T3}%{T-}"
-content-font = 3
-content-background = ${color.background}
-content-foreground = ${color.white}
-
-;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
-
-
-[module/CLD]
-type = custom/text
-content = "%{T3}%{T-}"
-content-font = 3
-content-background = ${color.background}
-content-foreground = ${colors.mantle}
-
-[module/CRD]
-type = custom/text
-content = "%{T3}%{T-}"
-content-font = 3
-content-background = ${color.background}
-content-foreground = ${colors.mantle}
-
-;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
-
-
-[module/MLD]
-type = custom/text
-content = "%{T3}%{T-}"
-content-font = 3
-content-background = ${color.background}
-content-foreground = ${colors.mantle}
-
-[module/MRD]
-type = custom/text
-content = "%{T3}%{T-}"
-content-font = 3
-content-background = ${color.background}
-content-foreground = ${colors.mantle}
-
-;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
-
-
-[module/YLD]
-type = custom/text
-content = "%{T3}%{T-}"
-content-font = 3
-content-background = ${color.background}
-content-foreground = ${colors.mantle}
-
-[module/YRD]
-type = custom/text
-content = "%{T3}%{T-}"
-content-font = 3
-content-background = ${color.background}
-content-foreground = ${colors.mantle}
-
-;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
-
-
-[module/GLD]
-type = custom/text
-content = "%{T3}%{T-}"
-content-font = 3
-content-background = ${color.background}
-content-foreground = ${color.secondary2}
-
-[module/GRD]
-type = custom/text
-content = "%{T3}%{T-}"
-content-font = 3
-content-background = ${color.background}
-content-foreground = ${color.secondary2}
-
-;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
-
-[module/BLD]
-type = custom/text
-content = "%{T3}%{T-}"
-content-font = 3
-content-background = ${color.background}
-content-foreground = ${colors.mantle}
-
-[module/BRD]
-type = custom/text
-content = "%{T3}%{T-}"
-content-font = 3
-content-background = ${color.background}
-content-foreground = ${colors.mantle}
-
-;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
-
-[module/YPL]
-type = custom/text
-content = "%{T3}%{T-}"
-content-font = 3
-content-background = ${color.secondary2}
-content-foreground = ${colors.mantle}
-
-[module/CPL]
-type = custom/text
-content = "%{T3}%{T-}"
-content-font = 3
-content-background = ${colors.mantle}
-content-foreground = ${color.secondary2}
-
-[module/RPL]
-type = custom/text
-content = "%{T3}%{T-}"
-content-font = 3
-content-background = ${colors.mantle}
-content-foreground = ${colors.mantle}
-
+;[module/spacing]
+;type = custom/text
+;content = " "
+;content-background = ${color.background}
+;
+;[module/sep]
+;type = custom/text
+;content = -
+;
+;content-background = ${color.background}
+;content-foreground = ${color.background}
+;
+;[module/dot]
+;type = custom/text
+;;content = 
+;content = " "
+;
+;content-font = 3
+;content-background = ${color.background}
+;content-foreground = ${color.secondary2}
+;content-padding = 1
+;
+;;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+;
+;[module/LD]
+;type = custom/text
+;content = "%{T3}%{T-}"
+;content-background = ${color.background}
+;content-foreground = ${color.secondary2}
+;
+;[module/RD]
+;type = custom/text
+;content = "%{T3}%{T-}"
+;content-background = ${color.background}
+;content-foreground = ${color.secondary2}
+;
+;;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+;
+;[module/RLD]
+;type = custom/text
+;content = "%{T3}%{T-}"
+;content-font = 3
+;content-background = ${color.background}
+;content-foreground = ${colors.mantle}
+;
+;[module/RRD]
+;type = custom/text
+;content = "%{T3}%{T-}"
+;content-font = 3
+;content-background = ${color.background}
+;content-foreground = ${colors.mantle}
+;
+;;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+;
+;[module/WLD]
+;type = custom/text
+;content = "%{T3}%{T-}"
+;content-font = 3
+;content-background = ${color.background}
+;content-foreground = ${color.white}
+;
+;[module/WRD]
+;type = custom/text
+;content = "%{T3}%{T-}"
+;content-font = 3
+;content-background = ${color.background}
+;content-foreground = ${color.white}
+;
+;;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+;
+;
+;[module/CLD]
+;type = custom/text
+;content = "%{T3}%{T-}"
+;content-font = 3
+;content-background = ${color.background}
+;content-foreground = ${colors.mantle}
+;
+;[module/CRD]
+;type = custom/text
+;content = "%{T3}%{T-}"
+;content-font = 3
+;content-background = ${color.background}
+;content-foreground = ${colors.mantle}
+;
+;;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+;
+;
+;[module/MLD]
+;type = custom/text
+;content = "%{T3}%{T-}"
+;content-font = 3
+;content-background = ${color.background}
+;content-foreground = ${colors.mantle}
+;
+;[module/MRD]
+;type = custom/text
+;content = "%{T3}%{T-}"
+;content-font = 3
+;content-background = ${color.background}
+;content-foreground = ${colors.mantle}
+;
+;;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+;
+;
+;[module/YLD]
+;type = custom/text
+;content = "%{T3}%{T-}"
+;content-font = 3
+;content-background = ${color.background}
+;content-foreground = ${colors.mantle}
+;
+;[module/YRD]
+;type = custom/text
+;content = "%{T3}%{T-}"
+;content-font = 3
+;content-background = ${color.background}
+;content-foreground = ${colors.mantle}
+;
+;;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+;
+;
+;[module/GLD]
+;type = custom/text
+;content = "%{T3}%{T-}"
+;content-font = 3
+;content-background = ${color.background}
+;content-foreground = ${color.secondary2}
+;
+;[module/GRD]
+;type = custom/text
+;content = "%{T3}%{T-}"
+;content-font = 3
+;content-background = ${color.background}
+;content-foreground = ${color.secondary2}
+;
+;;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+;
+;[module/BLD]
+;type = custom/text
+;content = "%{T3}%{T-}"
+;content-font = 3
+;content-background = ${color.background}
+;content-foreground = ${colors.mantle}
+;
+;[module/BRD]
+;type = custom/text
+;content = "%{T3}%{T-}"
+;content-font = 3
+;content-background = ${color.background}
+;content-foreground = ${colors.mantle}
+;
+;;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+;
+;[module/YPL]
+;type = custom/text
+;content = "%{T3}%{T-}"
+;content-font = 3
+;content-background = ${color.secondary2}
+;content-foreground = ${colors.mantle}
+;
+;[module/CPL]
+;type = custom/text
+;content = "%{T3}%{T-}"
+;content-font = 3
+;content-background = ${colors.mantle}
+;content-foreground = ${color.secondary2}
+;
+;[module/RPL]
+;type = custom/text
+;content = "%{T3}%{T-}"
+;content-font = 3
+;content-background = ${colors.mantle}
+;content-foreground = ${colors.mantle}
+;
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
 [module/LLL]
 type = custom/text
 content = "%{T3}ﮋ%{T-}"
 content-font = 3
-content-background = ${colors.mantle}
-content-foreground = ${colors.mantle}
+content-background = ${colors.base}
+content-foreground = ${colors.base}

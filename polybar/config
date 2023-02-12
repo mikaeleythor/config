@@ -1,134 +1,40 @@
-;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
-
 [global/wm]
 margin-bottom = 0
 margin-top = 0
 
 include-file = ~/.config/polybar/colors
+;;include-file = ~/.config/polybar/mocha.ini
 include-file = ~/.config/polybar/modules
 include-file = ~/.config/polybar/decor
-include-file = ~/.config/polybar/system
-include-file = ~/.config/polybar/mocha.ini
+include-file = ~/.config/polybar/frappe.ini
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
-
-[bar/secondary]
-
-monitor = DVI-I-1-1
-monitor-strict = true
-
-bottom = false
-fixed-center = true
-
-width = 100%
-height = 25
-
-background = ${color.background}
-foreground = ${color.foreground}
-
-line-size = 2
-line-color = ${color.secondary1}
-
-font-0 = "FreeSans:size=11;1"
-font-1 = "Fira Code Nerd Font Mono:size=18;3"
-font-2 = "Fira Code Nerd Font Mono:size=16;4"
-font-3 = "Fira Code Nerd Font Mono:size=18;4"
-font-4 = "Fira Code Nerd Font Mono:style=Bold:size=10;3"
-
-modules-left = LLL bspwm  LLL MRD 
-modules-center = 
-modules-right =
-
-border-size = 5
-border-color = ${color.background}
-
-spacing = 0
-dim-value = 1.0
-
-tray-position = none
-tray-detached = false
-tray-maxsize = 16
-tray-background = ${color.background}
-tray-offset-x = 0
-tray-offset-y = 0
-tray-padding = 0
-tray-scale = 1.0
-
-enable-ipc = true
 
 [bar/main]
 
 monitor = eDP-1
 monitor-strict = true
 
-override-redirect = false
-
 bottom = false 
 fixed-center = true
 
 width = 100%
-height = 25
+height = 20
 
-background = ${color.background}
-foreground = ${color.foreground}
-
-;radius-top = 0.0
-;radius-bottom = 0.0
-
-line-size = 2
-line-color = ${color.secondary1}
+background = ${colors.base}
+foreground = ${colors.text}
 
 border-size = 5
-border-color = ${color.background}
+border-color = ${colors.base}
 
-padding = 0
+line-size = 2
+line-color = ${colors.base}
 
-module-margin-left = 0
-module-margin-right = 0
-
-font-0 = "FreeSans:size=11;1"
+;font-0 = "FreeSans:size=11;1"
+font-0 = "Fira Code Nerd Font:size=12;2"
 font-1 = "Fira Code Nerd Font Mono:size=18;3"
 font-2 = "Fira Code Nerd Font Mono:size=16;4"
 font-3 = "Fira Code Nerd Font Mono:size=18;4"
 font-4 = "Fira Code Nerd Font Mono:style=Bold:size=10;3"
 
-# Default
-modules-left = LLL bspwm  LLL MRD 
-modules-center =  dot MLD LLL date LLL time LLL MRD dot 
-modules-right = MLD LLL network  LLL system-bluetooth-bluetoothctl LLL CRD MLD LLL volume LLL brightness LLL LLL battery LLL
-
-spacing = 0
-dim-value = 1.0
-
-;tray-position = none
-;tray-detached = false
-;tray-maxsize = 16
-;tray-background = ${color.background}
-;tray-offset-x = 0
-;tray-offset-y = 0
-;tray-padding = 0
-;tray-scale = 1.0
-
-enable-ipc = true
-
-cursor-click = 
-cursor-scroll = 
-
-;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
-
-[settings]
-
-throttle-output = 5
-throttle-output-for = 10
-
-screenchange-reload = false
-
-compositing-background = source
-compositing-foreground = over
-compositing-overline = over
-compositing-underline = over
-compositing-border = over
-
-pseudo-transparency = false
-
-;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+modules-left = bspwm  LLL MRD 
