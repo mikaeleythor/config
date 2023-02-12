@@ -8,10 +8,7 @@ super + alt + {q,r}
 
 # Reload sxhkd configuration files
 super + Escape
-	pkill -USR1 -x sxhkd
-
-super + b
-    betterlockscreen -l
+    pkill -USR1 -x sxhkd
 
 ##############################
 ###### Monitor controls ######
@@ -86,6 +83,10 @@ alt + shift + space
 super + {_,shift + }w
 	bspc node -{c,k}
 
+# hide and unhide
+super + n
+    bspc node -g hidden=on -f
+
 #######################
 ###### LAUNCHERS ######
 #######################
@@ -102,6 +103,9 @@ super + e
 super + Return
     alacritty
 
+# Lockscreen
+super + p
+    betterlockscreen -l -q
 
 #####################
 ###### HOTKEYS ######
@@ -144,11 +148,7 @@ XF86AudioPrev
 
 XF86AudioNext
     playerctl next
-# Screenshot
-# Print
-#    scrot 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/screenshots && mv $f ~/screenshots && xclip -selection clipboard -t image/png -i ~/screenshots/`ls -1 -t ~/screenshots | head -1`'
 
 # Screensnip
 Print
     flameshot gui
-    #scrot -s -f  'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/screenshots && mv $f ~/screenshots && xclip -selection clipboard -t image/png -i ~/screenshots/`ls -1 -t ~/screenshots | head -1`'

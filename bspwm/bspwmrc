@@ -6,14 +6,15 @@ xsettingsd &                                    # Theme manager
 xsetroot -cursor_name left_ptr &                # Prevent cursor from being an X
 albert &                                        # Launcher
 picom &                                         # Compositor
-pgrep -x sxhkd > /dev/null || sxhkd -c $HOME/.config/sxhkd/sxhkdrc &           # Keyboard shortcuts
+(pgrep -x sxhkd > /dev/null || sxhkd ~/.config/sxhkd/sxhkdrc) &           # Keyboard shortcuts
+
 nitrogen --force-setter=xinerama --restore &    # Wallpaper
 $HOME/.config/polybar/scripts/launch.sh &       # Taskbar
 if [[ -z "$( pidof redshift )" ]]; then 
   redshift -l 64:-21 &
 fi &
-plank &
-plank-raiser &
+(pgrep -x polydock || polydock) &
+
 bspc monitor $( connected-primary-monitor ) -d I II III IV V VI &
 
 ( xrandr-set-provider-output-source && (
@@ -41,6 +42,8 @@ bspc monitor $( connected-primary-monitor ) -d I II III IV V VI &
 bspc rule -a albert focus=on border=off
 bspc rule -a Spotify desktop=^6
 bspc rule -a "endeavour" state=floating rectangle=1200x800+360+140
+bspc rule -a "Notorious" state=floating
+bspc rule -a "solanum" state=floating
 bspc config border_width            2
 bspc config window_gap              10
 bspc config top_padding             10
