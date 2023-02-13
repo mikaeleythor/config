@@ -1,6 +1,6 @@
 [module/spacing]
 type = custom/text
-content = " "
+content = "    "
 content-background = ${colors.base}
 
 [module/filling]
