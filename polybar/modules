@@ -299,6 +299,20 @@ label-padding = 1
 ;format-foreground= ${colors.text}
 ;format-background = ${colors.mantle}
 ;
+[module/bt]
+type = custom/script
+exec = $HOME/.config/polybar/scripts/bluetooth.sh
+interval = 1
+format-foreground= ${colors.subtext0}
+format-background = ${colors.base}
+
+[module/vol]
+type = custom/script
+exec = $HOME/.config/polybar/scripts/volume.sh
+interval = 0
+format-foreground= ${colors.text}
+format-background = ${colors.surface0}
+
 ;[module/rpm]
 ;type = custom/script
 ;exec = $HOME/.config/polybar/scripts/cpu-fan.sh
@@ -306,40 +320,41 @@ label-padding = 1
 ;format-foreground= ${colors.text}
 ;format-background = ${colors.mantle}
 ;
-;[module/network]
-;type = internal/network
-;interface = ${system.network_interface}
-;
-;interval = 1.0
-;accumulate-stats = true
-;unknown-as-up = true
-;
-;format-connected = <ramp-signal><label-connected>
-;
-;format-disconnected = <label-disconnected>
-;format-disconnected-prefix = " 睊 "
-;format-disconnected-prefix-font = 2
-;format-disconnected-foreground = ${colors.lavender}
-;format-disconnected-background = ${colors.mantle}
-;
-;label-connected = "%{A1:def-nmdmenu &:}%essid%%{A}"
-;label-disconnected = "%{A1:def-nmdmenu &:}Offline%{A}"
-;
-;label-connected-foreground = ${colors.lavender}
-;label-disconnected-foreground = ${colors.lavender}
-;
-;label-connected-background = ${colors.mantle}
-;label-disconnected-background = ${colors.mantle}
-;
-;ramp-signal-0 = " "
-;ramp-signal-1 = " "
-;ramp-signal-2 = " "
-;ramp-signal-3 = " "
-;ramp-signal-4 = " "
-;ramp-signal-foreground = ${colors.lavender}
-;ramp-signal-background = ${colors.mantle}
-;ramp-signal-font = 2
-;
+
+[module/network]
+type = internal/network
+interface = ${system.network_interface}
+
+interval = 1.0
+accumulate-stats = true
+unknown-as-up = true
+
+format-connected = <ramp-signal><label-connected>
+
+format-disconnected = <label-disconnected>
+format-disconnected-prefix = " 睊 "
+format-disconnected-prefix-font = 2
+format-disconnected-foreground = ${colors.subtext0}
+format-disconnected-background = ${colors.base}
+
+label-connected = "%{A1:def-nmdmenu &:}%essid%%{A}"
+label-disconnected = "%{A1:def-nmdmenu &:}Offline%{A}"
+
+label-connected-foreground = ${colors.subtext0}
+label-disconnected-foreground = ${colors.subtext0}
+
+label-connected-background = ${colors.base}
+label-disconnected-background = ${colors.base}
+
+ramp-signal-0 = " "
+ramp-signal-1 = " "
+ramp-signal-2 = " "
+ramp-signal-3 = " "
+ramp-signal-4 = " "
+ramp-signal-foreground = ${colors.subtext0}
+ramp-signal-background = ${colors.base}
+ramp-signal-font = 2
+
 ;;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 ;
 ;[module/system-bluetooth-bluetoothctl]

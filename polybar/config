@@ -37,6 +37,6 @@ font-1 = "Fira Code Nerd Font Mono:size=18;3"
 font-2 = "Fira Code Nerd Font Mono:size=18;3"
 font-3 = "Fira Code Nerd Font Mono:style=Bold:size=40;3"
 
-modules-left = filling bspwm  right-circle MRD 
+modules-left = filling bspwm  right-circle 
 modules-center = left-circle date filling time right-circle
-modules-right = left-circle volume filling brightness filling battery filling
+modules-right = bt spacing network spacing left-circle vol filling brightness filling battery filling
