@@ -182,21 +182,21 @@ content-background = ${colors.surface0}
 
 [module/box]
 type = custom/text
-content = "%{T3}ﮋ%{T-}"
-;content-font = 1
+content = "%{T2}ﮋ%{T-}"
+content-font = 2
 content-background = ${colors.base}
 content-foreground = ${colors.surface0}
 
 [module/left-circle]
 type = custom/text
-content = "%{T3}%{T-}"
-content-font = 3
+content = "%{T2}%{T-}"
+content-font = 2
 content-background = ${colors.base}
 content-foreground = ${colors.surface0}
 
 [module/right-circle]
 type = custom/text
-content = "%{T3}%{T-}"
-content-font = 3
+content = "%{T2}%{T-}"
+content-font = 2
 content-background = ${colors.base}
 content-foreground = ${colors.surface0}
