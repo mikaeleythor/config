@@ -195,11 +195,12 @@ format-margin = 0
 
 date = "%a, %b %e"
 
-format-prefix = " "
+format-prefix = ""
+format-font = 2
 format-prefix-background = ${colors.surface0}
 format-prefix-foreground = ${colors.text}
 
-label = %date%
+label = " %date%"
 label-background = ${colors.surface0}
 label-foreground = ${colors.text}
 label-padding = 1
@@ -302,6 +303,7 @@ label-padding = 1
 [module/bt]
 type = custom/script
 exec = $HOME/.config/polybar/scripts/bluetooth.sh
+click-left = $HOME/.config/polybar/scripts/bluetooth.sh --toggle
 interval = 1
 format-foreground= ${colors.subtext0}
 format-background = ${colors.base}
