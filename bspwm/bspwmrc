@@ -10,42 +10,49 @@ picom &                                         # Compositor
 
 nitrogen --force-setter=xinerama --restore &    # Wallpaper
 $HOME/.config/polybar/scripts/launch.sh &       # Taskbar
-if [[ -z "$( pidof redshift )" ]]; then 
-  redshift -l 64:-21 &
+if [[ -z "$( pidof redshift )" ]]; then
+    redshift -l 64:-21 &
 fi &
 plank &
 plank-raiser &
 (pgrep -x polydock || polydock) &
+dunst &
 
 bspc monitor $( connected-primary-monitor ) -d I II III IV V VI &
 
 ( xrandr-set-provider-output-source && (
 
-  # Exclusive to DL monitor
-  if [[ -n "$( connected-DVI-monitors )" ]]; then
-  
-      # Init delay for partially dependent commands
-      init-DL-monitor --portrait && sleep 5
-  
-      # Map desktops to DL monitor
-      bspc monitor $( connected-DVI-monitors ) -d VII VIII IX X 
-  
-      nitrogen --force-setter=xinerama --restore &    # Wallpaper
-      $HOME/.config/polybar/launch.sh &               # Taskbar
-  
-      bspc rule -a 'VirtualBox Manager' desktop=^10 follow=on state=tiled
-      bspc rule -a 'VirtualBox Machine' desktop=^10 follow=on state=fullscreen
-      bspc rule -a 'VirtualBoxVM' desktop=^10 follow=on state=floating
-  fi &
+        # Exclusive to DL monitor
+        if [[ -n "$( connected-DVI-monitors )" ]]; then
 
-  ) & ) &
+            # Init delay for partially dependent commands
+            init-DL-monitor --portrait && sleep 5
+
+            # Map desktops to DL monitor
+            bspc monitor $( connected-DVI-monitors ) -d VII VIII IX X
+
+            nitrogen --force-setter=xinerama --restore &    # Wallpaper
+            $HOME/.config/polybar/launch.sh &               # Taskbar
+
+            bspc rule -a 'VirtualBox Manager' desktop=^10 follow=on state=tiled
+            bspc rule -a 'VirtualBox Machine' desktop=^10 follow=on state=fullscreen
+            bspc rule -a 'VirtualBoxVM' desktop=^10 follow=on state=floating
+        fi &
+
+) & ) &
 
 # Indepentent of DL monitor
 bspc rule -a albert focus=on border=off
-#bspc rule -a Spotify desktop=^6
+bspc rule -a "Spotify" desktop=^6
+bspc rule -a "Signal" desktop=^5
 bspc rule -a "endeavour" state=floating rectangle=1200x800+360+140
-bspc rule -a "Notorious" state=floating
+bspc rule -a "Org.gnome.Nautilus" state=floating rectangle=1200x800+360+140
+bspc rule -a "furtherance" state=floating
+bspc rule -a "thunderbird-default" desktop=^5
+bspc rule -a "gnome-calendar" desktop=^4
+bspc rule -a "sleek" state=floating rectangle=1200x800+360+140
 bspc rule -a "solanum" state=floating
+bspc rule -a "QjackCtl" state=floating
 #bspc rule -a "polybar" state=floating focus=off
 bspc config border_width            2
 bspc config window_gap              10
@@ -56,4 +63,3 @@ bspc config gapless_monocle         true
 #bspc config focus_follows_pointer   true
 bspc config remove_unplugged_monitors 	true
 bspc config remove_disabled_monitors 	true
-
