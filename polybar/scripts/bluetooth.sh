@@ -2,7 +2,8 @@
 
 bluetooth_print() {
 	if [ "$(bluetoothctl show | awk -F ': ' '/^.Powered/ {print $2}')" = "yes" ]; then
-				printf "%%{T3} "
+				printf "%%{T3} %%{T-}"
+				printf "%%{T1}"
 				printf "$(bluetoothctl info | awk -F ': ' '/^.Alias/ {print $2}')"
 				printf "%%{T-}"
 		else

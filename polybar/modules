@@ -308,12 +308,33 @@ interval = 1
 format-foreground= ${colors.subtext0}
 format-background = ${colors.base}
 
-[module/vol]
-type = custom/script
-exec = $HOME/.config/polybar/scripts/volume.sh
-interval = 0
-format-foreground= ${colors.text}
-format-background = ${colors.surface0}
+;[module/vol]
+;type = custom/script
+;exec = $HOME/.config/polybar/scripts/volume.sh
+;interval = 1
+;format-foreground= ${colors.text}
+;format-background = ${colors.surface0}
+
+;[module/vol]
+;type = custom/ipc
+;hook-0 = $HOME/.config/polybar/scripts/volume.sh
+;hook-1 = $HOME/.config/polybar/scripts/volume.sh --inc
+;hook-2 = $HOME/.config/polybar/scripts/volume.sh --dec
+;format-foreground= ${colors.text}
+;format-background = ${colors.surface0}
+
+;[module/demo]
+;type = custom/ipc
+;hook-0 = echo foobar
+;hook-1 = date +%s
+;hook-2 = whoami
+;initial = 1
+;format = <output>
+;click-left = "#demo.hook.0"
+;click-right = "#demo.hook.1"
+;double-click-left = "#demo.hook.2"
+;format-foreground= ${colors.text}
+;format-background = ${colors.yellow}
 
 ;[module/rpm]
 ;type = custom/script
