@@ -8,8 +8,12 @@ super + alt + {q,r}
 
 # Reload sxhkd configuration files
 super + Escape
-    pkill -USR1 -x sxhkd
+	pkill -usr1 -x sxhkd; \
+	notify-send 'sxhkd' 'Reloaded config'
 
+super + b
+    pkill -usr1 -x polybar; \
+    notify-send 'polybar' 'Reloaded config'
 ##############################
 ###### Monitor controls ######
 ##############################
@@ -20,7 +24,10 @@ super + ctrl + {j,k}
 
 # Move focus and focused window to monitor in DIR {left,right}
 super + ctrl + shift + {j,k}
-    id=$(bspc query --nodes --node); bspc node --to-monitor {prev,next}; bspc monitor --focus {prev,next}; bspc node --focus ${id}
+    id=$(bspc query --nodes --node); \
+    bspc node --to-monitor {prev,next}; \
+    bspc monitor --focus {prev,next}; \
+    bspc node --focus ${id}
 
 
 ##############################
@@ -31,9 +38,15 @@ super + ctrl + shift + {j,k}
 super + ctrl + {h,l}
     bspc desktop -f {prev,next}.local
 
+super + {1,2,3,4,5,6}
+    bspc desktop -f ^{1,2,3,4,5,6}
+
 # Move focus and focused window to workspace in DIR {left, right}
 super + ctrl + shift + {h,l}
-    id=$(bspc query --nodes --node); bspc node --to-desktop {prev,next}.local; bspc desktop --focus next.local; bspc node --focus ${id};
+    id=$(bspc query --nodes --node); \
+    bspc node --to-desktop {prev,next}.local; \
+    bspc desktop --focus next.local; \
+    bspc node --focus ${id};
 
 #############################
 ###### Window controls ######
@@ -57,7 +70,7 @@ super + m
 
 # Focus {prev,next} window in desktop [monocle]
 ctrl + shift + alt + {h,l}
-    bspc node -f {next,prev}.local.!hidden.window
+    bspc node -f {prev,next}.local.!hidden.window
 
 # Move floated window
 ctrl + alt + {h,j,k,l}
@@ -84,8 +97,17 @@ super + {_,shift + }w
 	bspc node -{c,k}
 
 # hide and unhide
-super + n
+super + shift + n
     bspc node -g hidden=on -f
+
+super + shift + p
+    bspc node any.hidden.local -g hidden=off -f
+
+super + {n,p}
+    bspc node -l {below,above}
+
+super + c
+    bspc rule -a --node -o state=floating rectangle=1200x800+360+140
 
 #######################
 ###### LAUNCHERS ######
@@ -100,11 +122,17 @@ super + e
     nautilus
 
 # Terminal emulator
-super + Return
-    alacritty
+super + {_,shift +}Return
+    {kitty, bspc rule -a \* -o state=floating \
+    rectangle=1200x800+360+140 && kitty}
+
+# Neovim
+super + i
+    bspc rule -a \* -o state=floating rectangle=1200x800+360+140 \
+    && kitty -e nvim
 
 # Lockscreen
-super + p
+super + shift + o
     betterlockscreen -l -q
 
 #####################
